@@ -45,8 +45,10 @@ def main():
 
     h = normalize(h.copy())
     a = normalize(a.copy())
+    print("hubness: ")
     print(h)
-    pass
+    print("authority: ")
+    print(a)
 
 
 if __name__ == "__main__":
