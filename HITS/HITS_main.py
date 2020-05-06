@@ -42,6 +42,9 @@ def main():
         a = normalize(Lh)
         La = multipe_matrix_to_vector(a.copy(), topology.copy())
         h = normalize(La.copy())
+
+    h = normalize(h.copy())
+    a = normalize(a.copy())
     print(h)
     pass
 

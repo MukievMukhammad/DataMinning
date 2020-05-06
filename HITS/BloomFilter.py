@@ -33,6 +33,10 @@ def hash2(value):
     hash = int(hashlib.md5(value.encode('utf-8')).hexdigest(), 16) % (10 ** 8)
     return hash % 321
 
+def hash3(value):
+    hash = int(hashlib.blake2s(value.encode('utf-8')).hexdigest(), 16) % (10 ** 8)
+    return hash % 321
+
 
 def main():
     bloom_filter = [0] * 321
@@ -41,8 +45,10 @@ def main():
     for word in words:
         h1 = hash1(word)
         h2 = hash2(word)
+        h3 = hash3(word)
         bloom_filter[h1] += 1
         bloom_filter[h2] += 1
+        bloom_filter[h3] += 1
 
 
 if __name__ == "__main__":
